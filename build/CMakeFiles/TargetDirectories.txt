@@ -1,0 +1,3 @@
+/home/joelfm4/Code/Projects/Maze/build/CMakeFiles/maze.dir
+/home/joelfm4/Code/Projects/Maze/build/CMakeFiles/edit_cache.dir
+/home/joelfm4/Code/Projects/Maze/build/CMakeFiles/rebuild_cache.dir
