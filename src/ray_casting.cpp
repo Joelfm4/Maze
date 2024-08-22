@@ -71,7 +71,7 @@ int main(int /*argc*/, char */*argv*/[])
       double sideDistX;
       double sideDistY;
       
-      // Length of ray from one x or y-side to next x or y-side
+      // Length of ray from one x or y-side to next x or y-side (depend on ray angle)
       double deltaDistX = (rayDirX == 0) ? 1e30 : std::abs(1 / rayDirX);
       double deltaDistY = (rayDirY == 0) ? 1e30 : std::abs(1 / rayDirY);
       double perpWallDist;
@@ -83,8 +83,42 @@ int main(int /*argc*/, char */*argv*/[])
       int hit = 0;
       int side;
 
+      // Calculate step
+      if(rayDirX < 0){
+        stepX -= 1;
+        sideDistX = (posX - mapX) * deltaDistX;
+
+      }else{
+        stepX = 1;
+        sideDistX = (mapX + 1.0 - posX) * deltaDistX;
+      }
+
+      if(rayDirY < 0){
+        stepY -= 1;
+        sideDistY = (posY - mapY) * deltaDistY;
+      }else{
+        stepY = 1;
+        sideDistY = (mapY + 1.0 - posY) * deltaDistY;
+      }
 
 
+      // DDA ALgorithm
+      while(hit == 0){
+
+        // Jump to next map square (angle tells where)
+        if(sideDistX < sideDistY){
+          sideDistX += deltaDistX;
+          mapX += stepX;
+          side = 0;
+
+        }else{
+          sideDistY += deltaDistY;
+          mapY += stepY;
+          side = 1;
+
+        }
+        if(worldMap[mapX][mapY] > 0) hit = 1;
+      }
     }
   }
 
