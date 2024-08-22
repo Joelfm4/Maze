@@ -119,6 +119,13 @@ int main(int /*argc*/, char */*argv*/[])
         }
         if(worldMap[mapX][mapY] > 0) hit = 1;
       }
+
+      // Calculate distance projected on camera direction
+      if(side == 0) perpWallDist = (sideDistX - deltaDistX);
+      else          perpWallDist = (sideDistY - deltaDistY);
+
+
+      // Calculate height of line to draw on scren
     }
   }
 
