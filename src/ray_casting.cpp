@@ -1,4 +1,5 @@
 #include <cmath>
+#include <cstdlib>
 #include <string>
 #include <vector>
 #include <iostream>
@@ -58,7 +59,32 @@ int main(int /*argc*/, char */*argv*/[])
     for(int x = 0; x < w; x++)
     {
       // Calculate tay position and direction
-      double cameraX = 2 * x / double(w) - 1;
+      double cameraX = 2 * x / double(w) - 1;    // x-cordinate in camera space
+      double rayDirX = dirX + planeX * cameraX;  // Ray direction
+      double rayDirY = dirY + planeY * cameraX;  // Ray direction
+      
+      // Which box of the map we're in
+      int mapX = int(posX);
+      int mapY = int(posY);
+
+      // Length of the ray from CURRENT position to next x or y-side
+      double sideDistX;
+      double sideDistY;
+      
+      // Length of ray from one x or y-side to next x or y-side
+      double deltaDistX = (rayDirX == 0) ? 1e30 : std::abs(1 / rayDirX);
+      double deltaDistY = (rayDirY == 0) ? 1e30 : std::abs(1 / rayDirY);
+      double perpWallDist;
+
+      // Steps directions
+      int stepX;
+      int stepY;
+
+      int hit = 0;
+      int side;
+
+
+
     }
   }
 
