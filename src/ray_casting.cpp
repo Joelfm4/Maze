@@ -126,6 +126,45 @@ int main(int /*argc*/, char */*argv*/[])
 
 
       // Calculate height of line to draw on scren
+      int lineHeight = (int)(h / perpWallDist);
+
+      // Calculate lowest and highest pixel to fill in current stripe
+      int drawStart = -lineHeight / 2 + h / 2;
+      if(drawStart < 0) drawStart = 0;
+
+      int drawEnd = lineHeight / 2 + h / 2;
+      if(drawEnd >= h) drawEnd = h - 1;
+
+
+      // Wall color
+      ColorRGB color;
+      switch (worldMap[mapX][mapY]) {
+        case 1: color = RGB_Red; break;     // Red
+        case 2: color = RGB_Green; break;   // Green
+        case 3: color = RGB_Blue; break;    // Blue
+        case 4: color = RGB_White; break;   // White
+        default: color = RGB_Yellow; break;
+      }
+
+      // Give x and y sides different brightness
+      if(side == 1) {color = color / 2;}
+
+      // Draw the pixels of the stripe as a vertical line
+      verLine(x, drawStart, drawEnd, color);
+
+      // Timing for input and FPS counter
+      oldTime = time;
+      time = getTicks();
+      
+      double frameTime = (time - oldTime) / 1000.0; // In seconds
+      print(1.0 / frameTime);                  // FPS counter
+      redraw();                                     // Redraw the screen
+      cls();                                        // Clean the backbuffer
+
+      // Speed modifiers
+
+
+
     }
   }
 
