@@ -5,9 +5,11 @@
 
 char grid[GRID_WIDTH * GRID_HEIGHT];
 
+
+
 void ResetGrid() {
     for (int i = 0; i < GRID_WIDTH * GRID_HEIGHT; ++i) {
-        grid[i] = '#';
+        grid[i] = '1';
     }
 }
 
@@ -20,7 +22,7 @@ bool IsInBounds(int x, int y) {
 }
 
 void Visit(int x, int y) {
-    grid[XYToIndex(x, y)] = ' ';
+    grid[XYToIndex(x, y)] = '0';
 
     int dirs[4] = {NORTH, EAST, SOUTH, WEST};
     for (int i = 0; i < 4; ++i) {
@@ -38,8 +40,8 @@ void Visit(int x, int y) {
         }
         int x2 = x + (dx << 1);
         int y2 = y + (dy << 1);
-        if (IsInBounds(x2, y2) && grid[XYToIndex(x2, y2)] == '#') {
-            grid[XYToIndex(x2 - dx, y2 - dy)] = ' ';
+        if (IsInBounds(x2, y2) && grid[XYToIndex(x2, y2)] == '1') {
+            grid[XYToIndex(x2 - dx, y2 - dy)] = '0';
             Visit(x2, y2);
         }
     }
