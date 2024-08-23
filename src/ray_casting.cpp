@@ -4,11 +4,6 @@
 #include "ray_casting.h"
 #include "quickcg.h"
 
-
-
-
-
-
 void runRayCasting(int worldMap[mapWidth][mapHeight])
 {
 
