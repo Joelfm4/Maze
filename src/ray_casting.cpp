@@ -76,7 +76,7 @@ void runRayCasting()
 
       // Calculate step
       if(rayDirX < 0){
-        stepX -= 1;
+        stepX = 1;
         sideDistX = (posX - mapX) * deltaDistX;
 
       }else{
