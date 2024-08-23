@@ -11,7 +11,7 @@
 void runRayCasting(int worldMap[mapWidth][mapHeight])
 {
 
-  double posX = 12, posY = 12;      // Start position
+  double posX = 1, posY = 1;      // Start position
   double dirX = -1, dirY = 0;       // Initial direction vector
   double planeX = 0, planeY = 0.66; // 2d raycaster version of camera plane
 

@@ -2,13 +2,12 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <variant>
 
 int grid[GRID_WIDTH * GRID_HEIGHT];
 
 void ResetGrid() {
     for (int i = 0; i < GRID_WIDTH * GRID_HEIGHT; ++i) {
-        grid[i] = '#';
+        grid[i] = 1;
     }
 }
 
@@ -21,7 +20,7 @@ bool IsInBounds(int x, int y) {
 }
 
 void Visit(int x, int y) {
-    grid[XYToIndex(x, y)] = ' ';
+    grid[XYToIndex(x, y)] = 0;
 
     int dirs[4] = {NORTH, EAST, SOUTH, WEST};
     for (int i = 0; i < 4; ++i) {
@@ -39,8 +38,8 @@ void Visit(int x, int y) {
         }
         int x2 = x + (dx << 1);
         int y2 = y + (dy << 1);
-        if (IsInBounds(x2, y2) && grid[XYToIndex(x2, y2)] == '#') {
-            grid[XYToIndex(x2 - dx, y2 - dy)] = ' ';
+        if (IsInBounds(x2, y2) && grid[XYToIndex(x2, y2)] == 1) {
+            grid[XYToIndex(x2 - dx, y2 - dy)] = 0;
             Visit(x2, y2);
         }
     }
@@ -49,22 +48,16 @@ void Visit(int x, int y) {
 void PrintGrid() {
     for (int y = 0; y < GRID_HEIGHT; ++y) {
         for (int x = 0; x < GRID_WIDTH; ++x) {
-            std::cout << grid[XYToIndex(x, y)];
+            std::cout << (grid[XYToIndex(x, y)] == 0 ? '0' : '1'); // Print as '0' or '1'
         }
         std::cout << std::endl;
     }
 }
 
-
 void GenerateWorldMap(int worldMap[GRID_WIDTH][GRID_HEIGHT]) {
-
     for (int y = 0; y < GRID_HEIGHT; ++y) {
         for (int x = 0; x < GRID_WIDTH; ++x) {
-            if (grid[XYToIndex(x, y)] == ' ') {
-                worldMap[y][x] = 0;
-            } else {
-                worldMap[y][x] = 1;
-            }
+            worldMap[y][x] = grid[XYToIndex(x, y)];
         }
     }
 }
@@ -73,5 +66,6 @@ void GenerateWorldMap(int worldMap[GRID_WIDTH][GRID_HEIGHT]) {
 void generateMaze(int (*worldMap)[24]){
   ResetGrid();
   Visit(1, 1);
+  PrintGrid();
   GenerateWorldMap(worldMap);
 }
