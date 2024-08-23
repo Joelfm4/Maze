@@ -10,6 +10,7 @@ include_directories(${CMAKE_SOURCE_DIR}/src ${SDL_INCLUDE_DIRS})
 add_executable(maze
   src/main.cpp
   src/ray_casting.cpp
+  src/maze_generator.cpp
   src/quickcg.cpp
 )
 

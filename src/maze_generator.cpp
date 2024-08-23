@@ -2,10 +2,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <variant>
 
-char grid[GRID_WIDTH * GRID_HEIGHT];
-
-
+int grid[GRID_WIDTH * GRID_HEIGHT];
 
 void ResetGrid() {
     for (int i = 0; i < GRID_WIDTH * GRID_HEIGHT; ++i) {
@@ -56,3 +55,23 @@ void PrintGrid() {
     }
 }
 
+
+void GenerateWorldMap(int worldMap[GRID_WIDTH][GRID_HEIGHT]) {
+
+    for (int y = 0; y < GRID_HEIGHT; ++y) {
+        for (int x = 0; x < GRID_WIDTH; ++x) {
+            if (grid[XYToIndex(x, y)] == ' ') {
+                worldMap[y][x] = 0;
+            } else {
+                worldMap[y][x] = 1;
+            }
+        }
+    }
+}
+
+
+void generateMaze(int (*worldMap)[24]){
+  ResetGrid();
+  Visit(1, 1);
+  GenerateWorldMap(worldMap);
+}

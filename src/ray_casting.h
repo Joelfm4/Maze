@@ -12,10 +12,9 @@ const int mapHeight = 24;
 using namespace QuickCG;
 
 
-extern int worldMap[mapWidth][mapHeight];
 
 
-void runRayCasting();
+void runRayCasting(int worldMap[mapWidth][mapHeight]);
 
 #endif
 
