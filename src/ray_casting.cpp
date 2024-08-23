@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <string>
 #include "ray_casting.h"
+#include "quickcg.h"
 
 
 
@@ -11,7 +12,7 @@
 void runRayCasting(int worldMap[mapWidth][mapHeight])
 {
 
-  double posX = 1, posY = 1;      // Start position
+  double posX = 1, posY = 1;        // Start position
   double dirX = -1, dirY = 0;       // Initial direction vector
   double planeX = 0, planeY = 0.66; // 2d raycaster version of camera plane
 
@@ -107,11 +108,9 @@ void runRayCasting(int worldMap[mapWidth][mapHeight])
       // Wall color
       ColorRGB color;
       switch (worldMap[mapX][mapY]) {
-        case 1: color = RGB_Red; break;     // Red
-        case 2: color = RGB_Green; break;   // Green
-        case 3: color = RGB_Blue; break;    // Blue
-        case 4: color = RGB_White; break;   // White
-        default: color = RGB_Yellow; break;
+        case 1: color = RGB_Red; break;      // Red
+        case 2: color = RGB_Yellow; break;   // Yellow
+        default: color = RGB_White; break;   // White
       }
 
       // Give x and y sides different brightness
@@ -125,7 +124,7 @@ void runRayCasting(int worldMap[mapWidth][mapHeight])
     time = getTicks();
       
     double frameTime = (time - oldTime) / 1000.0; // In seconds
-    print(1.0 / frameTime);                  // FPS counter
+    print(1.0 / frameTime);                       // FPS counter
     redraw();                                     // Redraw the screen
     cls();                                        // Clean the backbuffer
 
