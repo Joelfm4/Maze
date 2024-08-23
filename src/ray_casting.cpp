@@ -166,10 +166,6 @@ void runRayCasting(int worldMap[mapWidth][mapHeight])
       planeX = planeX * cos(rotSpeed) - planeY * sin(rotSpeed);
       planeY = oldPlaneX * sin(rotSpeed) + planeY * cos(rotSpeed);
     }
-
+  }
 }
 
-
-
-
- }
