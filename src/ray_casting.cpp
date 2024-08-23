@@ -34,7 +34,7 @@ int worldMap[mapWidth][mapHeight]
 void runRayCasting()
 {
 
-  double posX = 22, posY = 12;      // Start position
+  double posX = 12, posY = 12;      // Start position
   double dirX = -1, dirY = 0;       // Initial direction vector
   double planeX = 0, planeY = 0.66; // 2d raycaster version of camera plane
 
@@ -47,7 +47,7 @@ void runRayCasting()
 
   // Game Loop
   while(!done()){
-    for(int x = 0; x < w; x++)
+    for(int x = 0; x < screenWidth; x++)
     {
       // Calculate tay position and direction
       double cameraX = 2 * x / double(w) - 1;    // x-cordinate in camera space
@@ -76,7 +76,7 @@ void runRayCasting()
 
       // Calculate step
       if(rayDirX < 0){
-        stepX = 1;
+        stepX = -1;
         sideDistX = (posX - mapX) * deltaDistX;
 
       }else{
@@ -142,56 +142,56 @@ void runRayCasting()
 
       // Draw the pixels of the stripe as a vertical line
       verLine(x, drawStart, drawEnd, color);
-
-      // Timing for input and FPS counter
-      oldTime = time;
-      time = getTicks();
-      
-      double frameTime = (time - oldTime) / 1000.0; // In seconds
-      print(1.0 / frameTime);                  // FPS counter
-      redraw();                                     // Redraw the screen
-      cls();                                        // Clean the backbuffer
-
-      // Speed modifiers
-      double moveSpeed = frameTime * 5.0; // The constant value is in squares / second
-      double rotSpeed = frameTime * 3.0;  // The constant value is in radians / second
-
-
-      // Player movement
-      readKeys();
-      if (keyDown(SDLK_UP)){
-        if(worldMap[int(posX + dirX * moveSpeed)][int(posY)] == false) posX += dirX * moveSpeed;
-        if(worldMap[int(posX)][int(posY + dirY * moveSpeed)] == false) posY += dirY * moveSpeed;
-
-      }
-
-      // Move backwards
-      if (keyDown(SDLK_DOWN)){
-        if(worldMap[int(posX - dirX * moveSpeed)][int(posY)] == false) posX -= dirX * moveSpeed;
-        if(worldMap[int(posX)][int(posY - dirY * moveSpeed)] == false) posY -= dirY * moveSpeed;
-      }
-
-      // Rotate to the right
-      if (keyDown(SDLK_RIGHT)){
-        double oldDirX = dirX;
-        dirX = dirX * cos(-rotSpeed) - dirY * sin(-rotSpeed);
-        dirY = oldDirX * sin(-rotSpeed) + dirY * cos(-rotSpeed);
-        double oldPlaneX = planeX;
-        planeX = planeX * cos(-rotSpeed) - planeY * sin(-rotSpeed);
-        planeY = oldPlaneX * sin(-rotSpeed) + planeY * cos(-rotSpeed);
-      }
-
-      // Rotate to the left
-      if (keyDown(SDLK_LEFT)){
-        double oldDirX = dirX;
-        dirX = dirX * cos(rotSpeed) - dirY * sin(rotSpeed);
-        dirY = oldDirX * sin(rotSpeed) + dirY * cos(rotSpeed);
-        double oldPlaneX = planeX;
-        planeX = planeX * cos(rotSpeed) - planeY * sin(rotSpeed);
-        planeY = oldPlaneX * sin(rotSpeed) + planeY * cos(rotSpeed);
-      }
     }
-  }
+    // Timing for input and FPS counter
+    oldTime = time;
+    time = getTicks();
+      
+    double frameTime = (time - oldTime) / 1000.0; // In seconds
+    print(1.0 / frameTime);                  // FPS counter
+    redraw();                                     // Redraw the screen
+    cls();                                        // Clean the backbuffer
+
+    // Speed modifiers
+    double moveSpeed = frameTime * 5.0; // The constant value is in squares / second
+    double rotSpeed = frameTime * 3.0;  // The constant value is in radians / second
+
+
+    // Player movement
+    readKeys();
+    if (keyDown(SDLK_UP)){
+      if(worldMap[int(posX + dirX * moveSpeed)][int(posY)] == false) posX += dirX * moveSpeed;
+      if(worldMap[int(posX)][int(posY + dirY * moveSpeed)] == false) posY += dirY * moveSpeed;
+
+    }
+
+    // Move backwards
+    if (keyDown(SDLK_DOWN)){
+      if(worldMap[int(posX - dirX * moveSpeed)][int(posY)] == false) posX -= dirX * moveSpeed;
+      if(worldMap[int(posX)][int(posY - dirY * moveSpeed)] == false) posY -= dirY * moveSpeed;
+    }
+
+    // Rotate to the right
+    if (keyDown(SDLK_RIGHT)){
+      double oldDirX = dirX;
+      dirX = dirX * cos(-rotSpeed) - dirY * sin(-rotSpeed);
+      dirY = oldDirX * sin(-rotSpeed) + dirY * cos(-rotSpeed);
+      double oldPlaneX = planeX;
+      planeX = planeX * cos(-rotSpeed) - planeY * sin(-rotSpeed);
+      planeY = oldPlaneX * sin(-rotSpeed) + planeY * cos(-rotSpeed);
+    }
+
+    // Rotate to the left
+    if (keyDown(SDLK_LEFT)){
+      double oldDirX = dirX;
+      dirX = dirX * cos(rotSpeed) - dirY * sin(rotSpeed);
+      dirY = oldDirX * sin(rotSpeed) + dirY * cos(rotSpeed);
+      double oldPlaneX = planeX;
+      planeX = planeX * cos(rotSpeed) - planeY * sin(rotSpeed);
+      planeY = oldPlaneX * sin(rotSpeed) + planeY * cos(rotSpeed);
+    }
+
+}
 
 
 
