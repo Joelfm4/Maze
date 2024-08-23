@@ -1,8 +1,8 @@
 #ifndef MAZE_H
 #define MAZE_H
 
-#define GRID_WIDTH 79
-#define GRID_HEIGHT 23
+#define GRID_WIDTH 24
+#define GRID_HEIGHT 24
 #define NORTH 0
 #define EAST 1
 #define SOUTH 2
