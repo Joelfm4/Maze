@@ -11,9 +11,6 @@ const int mapHeight = 24;
 #include "quickcg.h"
 using namespace QuickCG;
 
-
-
-
 void runRayCasting(int worldMap[mapWidth][mapHeight]);
 
 #endif

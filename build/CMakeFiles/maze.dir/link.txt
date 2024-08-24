@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/maze.dir/src/main.cpp.o CMakeFiles/maze.dir/src/ray_casting.cpp.o CMakeFiles/maze.dir/src/maze_generator.cpp.o CMakeFiles/maze.dir/src/quickcg.cpp.o -o maze  /usr/lib/libSDLmain.a /usr/lib/libSDL.so

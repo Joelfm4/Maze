@@ -4,11 +4,6 @@
 #include "ray_casting.h"
 #include "quickcg.h"
 
-
-
-
-
-
 void runRayCasting(int worldMap[mapWidth][mapHeight])
 {
 
@@ -166,10 +161,6 @@ void runRayCasting(int worldMap[mapWidth][mapHeight])
       planeX = planeX * cos(rotSpeed) - planeY * sin(rotSpeed);
       planeY = oldPlaneX * sin(rotSpeed) + planeY * cos(rotSpeed);
     }
-
+  }
 }
 
-
-
-
- }
