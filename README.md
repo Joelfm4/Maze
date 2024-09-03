@@ -1,3 +1,3 @@
 # Maze
 
-![Code](images/maze.png)
+![Code](images/maze_visual.png)
