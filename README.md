@@ -20,5 +20,10 @@ There are three main components:
 ### FOV
 ![Code](images/vec.png)
 
+## How does Maze generation work?
+
+
+
+
 ## Final result
 ![Code](images/maze_visual.png)
