@@ -17,6 +17,8 @@ There are three main components:
 ### DDA(Digital Differential Analysis)
 ![Code](images/DDA.png)
 
+### FOV
+![Code](images/vec.png)
 
 ## Final result
 ![Code](images/maze_visual.png)
