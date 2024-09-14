@@ -17,11 +17,15 @@ There are three main components:
 ### DDA(Digital Differential Analysis)
 ![Code](images/DDA.png)
 
-### FOV
+### FOV (Field Of Vision)
 ![Code](images/vec.png)
+The FOV is determinated by the ratio of the length of the direction vector, and the length of the plane
+
 
 ## How does Maze generation work?
-
+...
+...
+...
 
 
 
