@@ -10,7 +10,9 @@ There are three main components:
 
 - A camera plane, which represents the surface of the computer screen and is represented by a line (a single vector) that should always be perpendicular to the direction vector.
 
-
+...
+...
+...
 
 ### DDA(Digital Differential Analysis)
 ![Code](images/DDA.png)
