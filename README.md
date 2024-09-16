@@ -31,7 +31,7 @@ We used `Digital Differential Analysis (DDA)` to find which squares of the map t
 The FOV is `determinated by the ratio of the length of the direction vector, and the length of the plane`
 ### Example: 
 
-<img src="images/fov_e.png" alt="Código" width="700" height="700" style="display: inline-block;">
+<img src="images/fov_ex.png" alt="Código" width="700" height="700" style="display: inline-block;">
 ***And in this example it becomes clearer what the FOV is in practice, roughly speaking, the larger the FOV, `the larger your field of view will be`.***
 </br>
 
