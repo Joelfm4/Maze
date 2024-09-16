@@ -13,20 +13,24 @@ There are three main components:
 - A camera plane, which represents the surface of the computer screen and is represented by a line (a single vector) that should always be perpendicular to the direction vector.
 
 
-### DDA(Digital Differential Analysis)
+## DDA(Digital Differential Analysis)
 
 We used **Digital Differential Analysis (DDA)** to find which squares of the map the ray hits and stop the algorithm once a square that is a wall is hit.
 
 ![Code](images/DDA.png)
 
 
-### FOV (Field Of Vision)
+## FOV (Field Of Vision)
 ![Code](images/vec.png)
 The FOV is determinated by the ratio of the length of the direction vector, and the length of the plane
-Example: 
-...
-...
-![Code](https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Fk0910qp964j21.jpg%3Fwidth%3D1080%26crop%3Dsmart%26auto%3Dwebp%26s%3Dcdba385b6843c8c120a581bb2533cea4a8c814e5)
+### Example: 
+![Code](images/fov_e.png)
+
+***And in this example it becomes clearer what the FOV is in practice, roughly speaking, the larger the FOV, the larger your field of view will be.***
+<img src="images/fov.webp" alt="Código" width="500" height="500" style="display: inline-block;">
+
+
+
 
 
 ## How does Maze generation work?
