@@ -26,6 +26,7 @@ The FOV is determinated by the ratio of the length of the direction vector, and 
 Example: 
 ...
 ...
+![Code](https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Fk0910qp964j21.jpg%3Fwidth%3D1080%26crop%3Dsmart%26auto%3Dwebp%26s%3Dcdba385b6843c8c120a581bb2533cea4a8c814e5)
 
 
 ## How does Maze generation work?
