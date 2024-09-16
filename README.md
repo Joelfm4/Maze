@@ -34,7 +34,9 @@ The FOV is determinated by the ratio of the length of the direction vector, and 
 
 ***And in this example it becomes clearer what the FOV is in practice, roughly speaking, the larger the FOV, the larger your field of view will be.***
 </br>
+
 <img src="images/fov.webp" alt="Código" width="500" height="500" style="display: inline-block;">
+
 
 When the player rotates, the camera has to rotate, so both the direction vector and the plane vector have to be rotated.
 ```
@@ -76,9 +78,22 @@ planeY = oldPlaneX * sin(rotSpeed) + planeY * cos(rotSpeed);
 
 
 ## How does Maze generation work?
-...
-...
-...
+This code uses a Depth-First Search (DFS) algorithm to generate a maze.
+
+1. **Initialization**:
+   - The `grid` is reset to all walls (`1`) with `ResetGrid()`.
+
+2. **Starting Point**:
+   - The maze generation starts from a given cell, typically `(1, 1)`.
+
+3. **DFS Maze Generation (`Visit` function)**:
+   - Mark the current cell as visited (`0`).
+   - Randomly shuffle the directions (NORTH, EAST, SOUTH, WEST) to ensure randomness.
+   - For each direction, check if moving two steps in that direction is within bounds and leads to an unvisited cell.
+     - If so, remove the wall between the current cell and the new cell and recursively visit the new cell.
+
+4. **Grid Conversion (`GenerateWorldMap` function)**:
+   - Convert the generated grid into the world map format.
 
 
 
