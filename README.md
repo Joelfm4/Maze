@@ -14,10 +14,11 @@ There are three main components:
 
 
 ### DDA(Digital Differential Analysis)
+
+We used **Digital Differential Analysis (DDA)** to find which squares of the map the ray hits and stop the algorithm once a square that is a wall is hit.
+
 ![Code](images/DDA.png)
-...
-...
-...
+
 
 ### FOV (Field Of Vision)
 ![Code](images/vec.png)
