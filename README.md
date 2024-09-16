@@ -33,6 +33,7 @@ The FOV is determinated by the ratio of the length of the direction vector, and 
 ![Code](images/fov_e.png)
 
 ***And in this example it becomes clearer what the FOV is in practice, roughly speaking, the larger the FOV, the larger your field of view will be.***
+</br>
 <img src="images/fov.webp" alt="Código" width="500" height="500" style="display: inline-block;">
 
 
