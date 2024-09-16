@@ -12,6 +12,13 @@ There are three main components:
 
 - A camera plane, which represents the surface of the computer screen and is represented by a line (a single vector) that should always be perpendicular to the direction vector.
 
+## Components representation
+![Code](images/vec.png)
+- The ***white ball*** represents the player (vector "pos")
+- The ***white ray*** represents the player's direction (vector "dir")
+- The ***yellow line*** represents the camera "plane". (I will use quotes around "plane" because ray casting occurs on a 2D map, so the plane is essentially just a line. However, for clarity, I will refer to it as the camera plane, even though this terminology isn’t entirely accurate.)
+
+
 
 ## DDA(Digital Differential Analysis)
 
@@ -21,7 +28,6 @@ We used **Digital Differential Analysis (DDA)** to find which squares of the map
 
 
 ## FOV (Field Of Vision)
-![Code](images/vec.png)
 The FOV is determinated by the ratio of the length of the direction vector, and the length of the plane
 ### Example: 
 ![Code](images/fov_e.png)
