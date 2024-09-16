@@ -12,6 +12,10 @@ There are three main components:
 
 - A camera plane, which represents the surface of the computer screen and is represented by a line (a single vector) that should always be perpendicular to the direction vector.
 
+
+
+
+
 ## Components representation
 ![Code](images/vec.png)
 - The `white ball` represents the player (vector "pos")
@@ -20,10 +24,16 @@ There are three main components:
 
 
 
+
+
 ## DDA(Digital Differential Analysis)
 
 We used `Digital Differential Analysis (DDA)` to find which squares of the map the ray hits and stop the algorithm once a square that is a wall is hit.
 ![Code](images/DDA.png)
+
+[Super Fast Ray Casting in Tiled Worlds using DDA](https://youtu.be/NbSee-XM7WA?si=yP9j_d1tot5lHzC1)
+
+
 
 
 
@@ -81,6 +91,8 @@ planeY = oldPlaneX * sin(rotSpeed) + planeY * cos(rotSpeed);
 
 
 
+
+
 ## How does Maze generation work?
 This code uses a Depth-First Search (DFS) algorithm to generate a maze.
 
@@ -98,6 +110,8 @@ This code uses a Depth-First Search (DFS) algorithm to generate a maze.
 
 4. **Grid Conversion (`GenerateWorldMap` function)**:
    - Convert the generated grid into the world map format.
+
+
 
 
 
