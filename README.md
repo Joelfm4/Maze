@@ -31,11 +31,15 @@ We used `Digital Differential Analysis (DDA)` to find which squares of the map t
 The FOV is `determinated by the ratio of the length of the direction vector, and the length of the plane`
 ### Example: 
 
-<img src="images/fov_ex.png" alt="Código" width="700" height="700" style="display: inline-block;">
-***And in this example it becomes clearer what the FOV is in practice, roughly speaking, the larger the FOV, `the larger your field of view will be`.***
-</br>
+<div style="display: flex; justify-content: center;">
+    <img src="images/fov_ex.png" alt="Example FOV" width="500" height="500" style="margin-right: 10px;">
+    <img src="images/fov.webp" alt="FOV Diagram" width="500" height="500">
+</div>
+In the example on the right, the concept of FOV becomes clearer. Generally, `a larger FOV results in a wider field of view`.
 
-<img src="images/fov.webp" alt="Código" width="500" height="500" style="display: inline-block;">
+
+
+
 
 ## Player movement
 When the `player rotates`, the camera has to rotate, so both the direction vector and the plane vector have to be rotated.
