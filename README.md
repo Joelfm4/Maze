@@ -38,39 +38,39 @@ The FOV is determinated by the ratio of the length of the direction vector, and 
 
 When the player rotates, the camera has to rotate, so both the direction vector and the plane vector have to be rotated.
 ```
-    // Player movement
-    readKeys();
-    if (keyDown(SDLK_UP)){
-      if(worldMap[int(posX + dirX * moveSpeed)][int(posY)] == false) posX += dirX * moveSpeed;
-      if(worldMap[int(posX)][int(posY + dirY * moveSpeed)] == false) posY += dirY * moveSpeed;
+// Player movement
+readKeys();
+if (keyDown(SDLK_UP)){
+if(worldMap[int(posX + dirX * moveSpeed)][int(posY)] == false) posX += dirX * moveSpeed;
+if(worldMap[int(posX)][int(posY + dirY * moveSpeed)] == false) posY += dirY * moveSpeed;
 
-    }
+}
 
-    // Move backwards
-    if (keyDown(SDLK_DOWN)){
-      if(worldMap[int(posX - dirX * moveSpeed)][int(posY)] == false) posX -= dirX * moveSpeed;
-      if(worldMap[int(posX)][int(posY - dirY * moveSpeed)] == false) posY -= dirY * moveSpeed;
-    }
+// Move backwards
+if (keyDown(SDLK_DOWN)){
+if(worldMap[int(posX - dirX * moveSpeed)][int(posY)] == false) posX -= dirX * moveSpeed;
+if(worldMap[int(posX)][int(posY - dirY * moveSpeed)] == false) posY -= dirY * moveSpeed;
+}
 
-    // Rotate to the right
-    if (keyDown(SDLK_RIGHT)){
-      double oldDirX = dirX;
-      dirX = dirX * cos(-rotSpeed) - dirY * sin(-rotSpeed);
-      dirY = oldDirX * sin(-rotSpeed) + dirY * cos(-rotSpeed);
-      double oldPlaneX = planeX;
-      planeX = planeX * cos(-rotSpeed) - planeY * sin(-rotSpeed);
-      planeY = oldPlaneX * sin(-rotSpeed) + planeY * cos(-rotSpeed);
-    }
+// Rotate to the right
+if (keyDown(SDLK_RIGHT)){
+double oldDirX = dirX;
+dirX = dirX * cos(-rotSpeed) - dirY * sin(-rotSpeed);
+dirY = oldDirX * sin(-rotSpeed) + dirY * cos(-rotSpeed);
+double oldPlaneX = planeX;
+planeX = planeX * cos(-rotSpeed) - planeY * sin(-rotSpeed);
+planeY = oldPlaneX * sin(-rotSpeed) + planeY * cos(-rotSpeed);
+}
 
-    // Rotate to the left
-    if (keyDown(SDLK_LEFT)){
-      double oldDirX = dirX;
-      dirX = dirX * cos(rotSpeed) - dirY * sin(rotSpeed);
-      dirY = oldDirX * sin(rotSpeed) + dirY * cos(rotSpeed);
-      double oldPlaneX = planeX;
-      planeX = planeX * cos(rotSpeed) - planeY * sin(rotSpeed);
-      planeY = oldPlaneX * sin(rotSpeed) + planeY * cos(rotSpeed);
-    }
+// Rotate to the left
+if (keyDown(SDLK_LEFT)){
+double oldDirX = dirX;
+dirX = dirX * cos(rotSpeed) - dirY * sin(rotSpeed);
+dirY = oldDirX * sin(rotSpeed) + dirY * cos(rotSpeed);
+double oldPlaneX = planeX;
+planeX = planeX * cos(rotSpeed) - planeY * sin(rotSpeed);
+planeY = oldPlaneX * sin(rotSpeed) + planeY * cos(rotSpeed);
+}
 ```
 
 
