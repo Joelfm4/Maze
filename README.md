@@ -1,5 +1,10 @@
 # Maze
 
+## TODO
+- Add textures
+- Improve Maze Generation
+- Rewrite all code
+
 
 ## How does ray casting work?
 The map is a 2D square grid, and each square can either be 0 (no wall), or a positive value (a wall with a certain colour or texture).
