@@ -3,7 +3,6 @@
 ## TODO
 - Add textures
 - Improve Maze Generation
-- Rewrite all code
 
 
 ## How does ray casting work?
@@ -48,7 +47,6 @@ The FOV is `determinated by the ratio of the length of the direction vector, and
 
 <div style="display: flex; justify-content: center;">
     <img src="images/fov_ex.png" alt="Example FOV" width="500" height="500" style="margin-right: 10px;">
-    <img src="images/fov.webp" alt="FOV Diagram" width="500" height="500">
 </div>
 In the example on the right, the concept of FOV becomes clearer. Generally, a larger FOV results in a wider field of view.
 
