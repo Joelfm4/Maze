@@ -23,6 +23,7 @@ void Visit(int x, int y) {
     grid[XYToIndex(x, y)] = 0;
 
     int dirs[4] = {NORTH, EAST, SOUTH, WEST};
+
     for (int i = 0; i < 4; ++i) {
         int r = std::rand() & 3;
         std::swap(dirs[i], dirs[r]);
@@ -48,7 +49,7 @@ void Visit(int x, int y) {
 void PrintGrid() {
     for (int y = 0; y < GRID_HEIGHT; ++y) {
         for (int x = 0; x < GRID_WIDTH; ++x) {
-            std::cout << (grid[XYToIndex(x, y)] == 0 ? '0' : '1');
+						std::cout << grid[XYToIndex(x, y)];
         }
         std::cout << std::endl;
     }
@@ -66,6 +67,6 @@ void GenerateWorldMap(int worldMap[GRID_WIDTH][GRID_HEIGHT]) {
 void generateMaze(int (*worldMap)[24]){
   ResetGrid();
   Visit(1, 1);
-  // PrintGrid();
+  PrintGrid();
   GenerateWorldMap(worldMap);
 }

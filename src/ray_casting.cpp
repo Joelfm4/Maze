@@ -1,12 +1,12 @@
 #include <cmath>
+#include <iostream>
 #include <cstdlib>
 #include <string>
 #include "ray_casting.h"
 #include "quickcg.h"
 
-void runRayCasting(int worldMap[mapWidth][mapHeight])
-{
 
+void runRayCasting(int worldMap[mapWidth][mapHeight]){
   double posX = 1, posY = 1;        // Start position
   double dirX = -1, dirY = 0;       // Initial direction vector
   double planeX = 0, planeY = 0.66; // 2d raycaster version of camera plane
@@ -16,7 +16,7 @@ void runRayCasting(int worldMap[mapWidth][mapHeight])
   double oldTime = 0; // Time of previous frame
 
   // Screen Resolution
-  screen(screenWidth, screenHeight, 0, "Maze");
+  screen(screenWidth, screenHeight, 1, "Maze");
 
   // Game Loop
   while(!done()){
@@ -103,9 +103,8 @@ void runRayCasting(int worldMap[mapWidth][mapHeight])
       // Wall color
       ColorRGB color;
       switch (worldMap[mapX][mapY]) {
-        case 1: color = RGB_Red; break;      // Red
-        case 2: color = RGB_Yellow; break;   // Yellow
-        default: color = RGB_White; break;   // White
+        case 1: color = RGB_Red; break;
+        case 2: color = RGB_Yellow; break;
       }
 
       // Give x and y sides different brightness
@@ -119,7 +118,12 @@ void runRayCasting(int worldMap[mapWidth][mapHeight])
     time = getTicks();
       
     double frameTime = (time - oldTime) / 1000.0; // In seconds
-    print(1.0 / frameTime);                       // FPS counter
+		int timer = int(getTicks() / 1000);
+		int fps = int(1.0 / frameTime);
+
+    print("FPS: " + std::to_string(fps), 0, 5);                       
+		print("Timer: " + std::to_string(int(getTicks() / 1000)), 720, 5);
+
     redraw();                                     // Redraw the screen
     cls();                                        // Clean the backbuffer
 
@@ -161,6 +165,19 @@ void runRayCasting(int worldMap[mapWidth][mapHeight])
       planeX = planeX * cos(rotSpeed) - planeY * sin(rotSpeed);
       planeY = oldPlaneX * sin(rotSpeed) + planeY * cos(rotSpeed);
     }
+
+		std::cout << posX << '\n';
+		std::cout << posY << '\n';
+
+		std::cout << "-----------------------------------------------" << '\n';
+
+		if(int(posX) == 22 && int(posY) == 22){
+			std::cout << "END" << '\n';
+
+
+			sleep();
+			end();
+		};
+
   }
 }
-
