@@ -174,6 +174,7 @@ void runRayCasting(int worldMap[mapWidth][mapHeight]){
 		if(int(posX) == 22 && int(posY) == 22){
 			std::cout << "END" << '\n';
 
+			print("End", 100, 100); // TODO: End
 
 			sleep();
 			end();

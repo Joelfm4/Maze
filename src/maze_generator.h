@@ -2,22 +2,18 @@
 #define MAZE_H
 
 #include "ray_casting.h"
-#define GRID_WIDTH 24
-#define GRID_HEIGHT 24
-#define NORTH 0
-#define EAST 1
-#define SOUTH 2
-#define WEST 3
+#include <algorithm>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <random>
+#include <vector>
 
+void printMaze(int (&maze)[mapWidth][mapHeight]);
+bool isInside(int x, int y);
 
-void ResetGrid();
-int XYToIndex(int x, int y);
-bool IsInBounds(int x, int y);
-void Visit(int x, int y);
-void PrintGrid();
-
-
-void generateMaze(int worldMap[mapWidth][mapHeight]);
+void carveMaze(int (&maze)[mapWidth][mapHeight], int x, int y);
+void createMaze(int (&maze)[mapWidth][mapHeight]);
 
 #endif // MAZE_H
 
