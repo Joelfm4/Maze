@@ -104,7 +104,8 @@ void runRayCasting(int worldMap[mapWidth][mapHeight]){
       ColorRGB color;
       switch (worldMap[mapX][mapY]) {
         case 1: color = RGB_Red; break;
-        case 2: color = RGB_Yellow; break;
+        case 2: color = RGB_White; break;
+        case 3: color = RGB_Blue; break;
       }
 
       // Give x and y sides different brightness
