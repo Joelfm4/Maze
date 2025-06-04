@@ -16,7 +16,7 @@ void runRayCasting(int worldMap[mapWidth][mapHeight]){
   double oldTime = 0; // Time of previous frame
 
   // Screen Resolution
-  screen(screenWidth, screenHeight, 1, "Maze");
+  screen(screenWidth, screenHeight, 0, "Maze");
 
   // Game Loop
   while(!done()){
@@ -166,12 +166,10 @@ void runRayCasting(int worldMap[mapWidth][mapHeight]){
       planeY = oldPlaneX * sin(rotSpeed) + planeY * cos(rotSpeed);
     }
 
-		std::cout << posX << '\n';
-		std::cout << posY << '\n';
+		// std::cout << (int)round(posX) << '\n';
+		// std::cout << (int)round(posY) << '\n';
 
-		std::cout << "-----------------------------------------------" << '\n';
-
-		if(int(posX) == 22 && int(posY) == 22){
+		if((int)round(posX) == mapWidth - 1 && (int)round(posY) == mapHeight - 1){
 			std::cout << "END" << '\n';
 
 			print("End", 100, 100); // TODO: End
