@@ -173,7 +173,10 @@ void runRayCasting(int worldMap[mapWidth][mapHeight]){
 		if((int)round(posX) == mapWidth - 1 && (int)round(posY) == mapHeight - 1){
 			std::cout << "END" << '\n';
 
-			print("End", 100, 100); // TODO: End
+			print("End", (int)(screenWidth / 2), (int)(screenHeight / 2));
+
+    	redraw();
+    	cls();
 
 			sleep();
 			end();

@@ -119,7 +119,6 @@ void screen(int width, int height, bool fullscreen, const std::string& text)
   }
   else
   {
-    // TODO: use OpenGL to check if the blitting goes potentially faster with it
     scr = SDL_SetVideoMode(width, height, colorDepth, SDL_HWSURFACE | SDL_HWPALETTE);
   }
   if(scr == NULL)
