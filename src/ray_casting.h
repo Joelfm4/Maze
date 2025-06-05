@@ -6,8 +6,8 @@ using namespace QuickCG;
 
 const int screenWidth = 800;
 const int screenHeight = 600;
-const int mapWidth = 25;
-const int mapHeight = 25;
+const int mapWidth = 87;
+const int mapHeight = 87;
 
 void runRayCasting(int worldMap[mapWidth][mapHeight]);
 

@@ -4,6 +4,11 @@
 #include <ctime>
 
 int main() {
+	if(mapWidth != mapHeight || mapWidth % 2 == 0 || mapWidth > 83){
+		std::cout << "The provided dimensions are not allowed." << '\n';
+		return -1;
+	}
+
 	int maze[mapWidth][mapHeight];
 
 	createMaze(maze);
