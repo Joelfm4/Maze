@@ -123,7 +123,7 @@ void runRayCasting(int worldMap[mapWidth][mapHeight]){
 		int fps = int(1.0 / frameTime);
 
     print("FPS: " + std::to_string(fps), 0, 5);                       
-		print("Timer: " + std::to_string(int(getTicks() / 1000)), 720, 5);
+		print("Timer: " + std::to_string(timer), 720, 5);
 
     redraw();                                     // Redraw the screen
     cls();                                        // Clean the backbuffer

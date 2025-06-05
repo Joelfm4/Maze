@@ -3,7 +3,7 @@
 
 // y -> Line (row)
 // x -> Column
-void printMaze(int (&maze)[mapHeight][mapWidth]){
+void printMaze(const int (&maze)[mapHeight][mapWidth]){
     for(int y = 0; y < mapHeight; ++y){
         for(int x = 0; x < mapWidth; ++x){
             std::cout << maze[y][x];
@@ -17,7 +17,7 @@ bool isInside(int x, int y){
 }
 
 void carveMaze(int (&maze)[mapHeight][mapWidth], int x, int y){
-    int directions[4][2] = {{2,0}, {-2,0}, {0,2}, {0,-2}};
+    const int directions[4][2] = {{2,0}, {-2,0}, {0,2}, {0,-2}};
 
     maze[y][x] = 0;
 
@@ -25,7 +25,7 @@ void carveMaze(int (&maze)[mapHeight][mapWidth], int x, int y){
     std::mt19937 g(rd());
     std::shuffle(std::begin(directions), std::end(directions), g);
     
-    for(const auto& direction : directions){
+    for(auto const* direction : directions){
         int dx = direction[0];
         int dy = direction[1];
         int nx = x + dx;
@@ -39,7 +39,6 @@ void carveMaze(int (&maze)[mapHeight][mapWidth], int x, int y){
 }
 
 void createMaze(int (&maze)[mapHeight][mapWidth]){
-    // Initialize the array
     for(int y = 0; y < mapHeight; ++y){
         for(int x = 0; x < mapWidth; ++x){
             maze[y][x] = 1;
