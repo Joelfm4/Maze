@@ -17,7 +17,7 @@ bool isInside(int x, int y){
 }
 
 void carveMaze(int (&maze)[mapHeight][mapWidth], int x, int y){
-    const int directions[4][2] = {{2,0}, {-2,0}, {0,2}, {0,-2}};
+    int directions[4][2] = {{2,0}, {-2,0}, {0,2}, {0,-2}};
 
     maze[y][x] = 0;
 

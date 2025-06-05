@@ -7,9 +7,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <random>
-#include <vector>
 
-void printMaze(int (&maze)[mapWidth][mapHeight]);
+void printMaze(const int (&maze)[mapWidth][mapHeight]);
 bool isInside(int x, int y);
 
 void carveMaze(int (&maze)[mapWidth][mapHeight], int x, int y);

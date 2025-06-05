@@ -117,10 +117,11 @@ void runRayCasting(int worldMap[mapWidth][mapHeight]){
     // Timing for input and FPS counter
     oldTime = time;
     time = getTicks();
-      
+
     double frameTime = (time - oldTime) / 1000.0; // In seconds
 		int timer = int(getTicks() / 1000);
 		int fps = int(1.0 / frameTime);
+
 
     print("FPS: " + std::to_string(fps), 0, 5);                       
 		print("Timer: " + std::to_string(timer), 720, 5);
@@ -129,7 +130,7 @@ void runRayCasting(int worldMap[mapWidth][mapHeight]){
     cls();                                        // Clean the backbuffer
 
     // Speed modifiers
-    double moveSpeed = frameTime * 5.0; // The constant value is in squares / second
+    double moveSpeed = frameTime * 3.0; // The constant value is in squares / second
     double rotSpeed = frameTime * 3.0;  // The constant value is in radians / second
 
 
